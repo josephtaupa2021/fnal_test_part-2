@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <center>
+        <div>
+            <%- include('./partials/header') %>
+        </div>
+        <div>
+            <div>
+                <table id="linkTable">
+                    <tr>
+                        <td> <a href="/createUser">Create an account</a>
+                        </td>
+                        <td> <a href="/login">Login</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <p>Write your message</p>
+        <form action="/message" method="POST" id="form-msg">
+            <table>
+                <tr>
+                    <td>
+                        <textarea name="content" class="form-style" cols="50" rows="5" form="form-msg"
+                            placeholder="What's on your mind?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Post"></td>
+                </tr>
+            </table>
+
+        </form>
+    </center>
+</body>
+
+</html>

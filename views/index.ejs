@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <center>
+        <div>
+            <%- include('./partials/header') %>
+        </div>
+
+        <div>
+            <%- include('./partials/links') %>
+        </div>
+        <h4>Messages</h4>
+
+        <% for (let message of locals.messages) { %>
+            <table class="message-table">
+                <tr>
+                    <td>
+                        <strong>
+                            <%= message.dataValues.creator %>
+                        </strong>
+                        <p>
+                            <%= message.dataValues.createdAt %>
+                        </p>
+                        <p>
+                            <%= message.dataValues.content %>
+                        </p>
+                        <p><input type="button" value="Like" id="btn_like" onclick="upvote()">
+                            <input type="button" value="Dislike" id="btn_dislike" onclick="downvote()">
+                        </p>
+                    </td>
+                </tr>
+                <script>
+                    let counter = 0;
+                    function upvote() {
+                        counter++;
+                        document.getElementById('btn_like').value = `Like ${counter}`;
+                    }
+                    function downvote() {
+                        counter++;
+                        document.getElementById('btn_dislike').value = `Dislike ${counter}`;
+                    }
+                </script>
+            </table>
+            <% } %>
+    </center>
+</body>
+
+</html>
