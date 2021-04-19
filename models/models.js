@@ -30,7 +30,7 @@ User.hasMany(Message)
 Message.belongsTo(User);
 
 (async () => {
-    await sequelize.sync({ force: true })   // .sync() is initialized for persistence (especially for count (likes))
+    await sequelize.sync()   // .sync() is initialized for persistence (especially for count (likes))
 })()
 
 module.exports = {
