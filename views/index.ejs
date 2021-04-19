@@ -34,19 +34,14 @@
                             <%= message.dataValues.content %>
                         </p>
                         <p><input type="button" value="Like" id="btn_like" onclick="upvote()">
-                            <input type="button" value="Dislike" id="btn_dislike" onclick="downvote()">
                         </p>
                     </td>
                 </tr>
                 <script>
-                    let counter = 0;
+                    let counter = 0;    // counter variable to store count (int)
                     function upvote() {
-                        counter++;
+                        counter++;      // increment ++ 
                         document.getElementById('btn_like').value = `Like ${counter}`;
-                    }
-                    function downvote() {
-                        counter++;
-                        document.getElementById('btn_dislike').value = `Dislike ${counter}`;
                     }
                 </script>
             </table>
